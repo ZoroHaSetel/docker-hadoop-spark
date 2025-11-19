@@ -13,6 +13,10 @@ ENV PATH $PIG_HOME/bin/:$PATH
 
 RUN chmod +x $PIG_HOME/bin/pig
 
+# Configure Pig environment
+ENV PIG_CLASSPATH /etc/hadoop:/etc/hadoop/conf
+ENV LOG4J_CONFIGURATION_FILE file:/etc/hadoop/log4j.properties
+
 WORKDIR /root
 
 CMD ["/bin/bash"]
