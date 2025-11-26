@@ -31,6 +31,7 @@ up :
 
 shell :
 	docker exec -it namenode bash
+	
 shell-spark :
 	docker exec -it spark-master bash
 

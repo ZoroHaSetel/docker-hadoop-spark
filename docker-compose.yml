@@ -49,6 +49,9 @@ services:
       - ./hadoop.env
 
   historyserver:
+    build:
+      context: ./historyserver
+      dockerfile: Dockerfile
     image: bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
     container_name: historyserver
     restart: always
