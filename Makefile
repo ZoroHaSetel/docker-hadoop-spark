@@ -10,6 +10,8 @@ build:
 	docker build -t bde2020/hadoop-historyserver:$(current_branch) ./historyserver
 	docker build -t bde2020/hadoop-submit:$(current_branch) ./submit
 	docker build -t bde2020/hadoop-pig:$(current_branch) ./pig
+	docker build -t bde2020/spark-master:3.0.0-hadoop3.2-python ./spark-master
+	docker build -t bde2020/spark-worker:3.0.0-hadoop3.2-python ./spark-worker
 # 	docker build -t bde2020/hive:master ./
 
 build-pig:
@@ -29,6 +31,9 @@ up :
 
 shell :
 	docker exec -it namenode bash
+	
+shell-spark :
+	docker exec -it spark-master bash
 
 pig-shell:
 	docker exec -it pig bash
